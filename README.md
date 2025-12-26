@@ -1,2 +1,2 @@
 # aws-training
-AWS training and certification
+This repo has information related to AWS training and certification - Prepared Satya Bondili on Dec 2025
