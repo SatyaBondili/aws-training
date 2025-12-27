@@ -5,6 +5,7 @@ Table of Contents
 - [AWS 6 pillars mnemonics?](#aws-6-pillars)
 - [AWS Serverless service/architecture vs Server based architecture?](#aws-serverless)
 - [AWS VPC (Virtual Private Cloud)](#aws-vpc)
+- [How can i Architect cloud solution using amazon RDS](#aws-rds)
 
 
 <a id="aws-service-count"></a>
@@ -117,4 +118,12 @@ PROCESS mnemonic for the AWS Well-Architected Framework pillars:
 
 <img width="424" height="245" alt="image" src="https://github.com/user-attachments/assets/9a2d4572-dff8-4c65-a64a-dcd6b0198a06" />
 
+<a id="aws-rds"></a>
+### [How can i Architect cloud solution using amazon RDS](#aws-rds)
+* There are 2 ways to setup database AWS cloud.
+  - 1. Install Oracle or other database in AWS EC2 instance.
+  - 2. Use Amazon RDS service
+* if you use EC2 instance, you need to install your database and also need to manage upgrades and patches.
+* if you use RDS service, you no need to manage the database. RDS provides all type of databases with high scalability and availability
 
+<img width="512" height="268" alt="image" src="https://github.com/user-attachments/assets/c6d66ee9-0621-4855-bdb2-ac25e35f568d" />
