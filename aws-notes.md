@@ -6,6 +6,7 @@ Table of Contents
 - [AWS Serverless service/architecture vs Server based architecture?](#aws-serverless)
 - [AWS VPC (Virtual Private Cloud)](#aws-vpc)
 - [How can i Architect cloud solution using amazon RDS](#aws-rds)
+- [What is key pair in EC2 setup](#aws-ec2)
 
 
 <a id="aws-service-count"></a>
@@ -127,3 +128,34 @@ PROCESS mnemonic for the AWS Well-Architected Framework pillars:
 * if you use RDS service, you no need to manage the database. RDS provides all type of databases with high scalability and availability
 
 <img width="512" height="268" alt="image" src="https://github.com/user-attachments/assets/c6d66ee9-0621-4855-bdb2-ac25e35f568d" />
+
+<a id="aws-ec2"></a>
+### [What is key pair in EC2 setup](#aws-ec2)
+* To login personal computer, username and password is required if you enable it.
+* Key pair is similar to username and password which is used to login to EC2 instance securely.
+  - AWS stores the public key.
+  - You download the private key (.pem) to your personal computer.
+  - Private key is in encrypted format. Private key format:
+    - .pem (Linux/macOS)
+    - .ppk (Windows + PuTTY)
+  - Why Key pair exists?
+    - Password login is disabled by default.
+    - SSH key-based auth = more secure
+    - No key → no entry 🚫
+   
+  - Best Practices (aka don’t be careless)
+    - One key pair per environment (dev / prod)
+    - Rotate keys periodically.
+    - Never commit .pem to Git (ever)
+  - Lost your key? Options (not fun)
+    - Create new key pair.
+   
+  - What is a Creating Key Pair via AWS CLI?
+    - AWS generates an EC2 SSH key pair.
+    - Public key stays in AWS.
+    - Private key is downloaded to your machine via terminal
+    - Functionally identical to console-created keys. Just faster. Cleaner. Cooler.
+    - login to EC2 via CLI: > ssh -i my-ec2-key.pem ec2-user@<EC2-Public-IP>
+
+  - What is SSH?
+    - Secure Shell (SSH) is crypto network protocal used to access remote computer securely.
