@@ -1,6 +1,7 @@
 ### What is Cloud Computing?
 * Renting computer and resources like storage, database, servers and network over internet is called Cloud Computing.
 * In Cloud computing, cloud means getting anyting over internet is called Cloud.
+* Delivery of IT resources over internet on demand, based on pay as you go model is called Cloud Computing (AWS Defination)
   
 **Computing means** processing information using computers.
 
