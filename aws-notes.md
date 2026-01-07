@@ -336,3 +336,4 @@ PROCESS mnemonic for the AWS Well-Architected Framework pillars:
 * Amazon EC2 stands for Amazon Elastic Compute Cloud. 
   - EC2 is like a virtual server given on rent over internet to cutomers.
   - Virtual server (VM) shares the hardware of same computer like RAM, CPU and SDD (hard disk). Using hypervisor tool we can create multiple VMs in same computer. Each VM may run on different operating system but CPU, RAM, Hard Disk is same.
+  - Hypervisor completely isolates each VM from others running in same machine.
