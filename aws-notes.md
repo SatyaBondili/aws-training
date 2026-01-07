@@ -346,10 +346,14 @@ PROCESS mnemonic for the AWS Well-Architected Framework pillars:
 <a id="aws-cli"></a>
 ### [Ways to interact with AWS services](#aws-cli)
 1. AWS Console ( Manually log in to AWS UI to perform operations).
-2. AWS CLI ( Use can use cloud shell to perform operations on AWS services. Example you can create EC2 instance, stop EC2 insatnce, start EC2 instance, update settings of EC2 insatnce using commands via cloud shell - it is called CLI).
+   - The AWS Management Console is a web interface for managing AWS services.
+   - Good for: Users who prefer a visual, easy-to-use interface for managing and configuring AWS services.
+3. AWS CLI ( Use can use cloud shell to perform operations on AWS services. Example you can create EC2 instance, stop EC2 insatnce, start EC2 instance, update settings of EC2 insatnce using commands via cloud shell - it is called CLI).
   - AWS CLI stands for Amazon Web Services Command Line Interface.
   - <img width="740" height="238" alt="image" src="https://github.com/user-attachments/assets/6f6c7104-5f04-4b39-88d1-21bdf7d47b14" />
   - CLI is used to perform repatative tasks. Developer creates a script which covers all steps to create a new EC2 instance in AWS, stores in code repository. That script is used by new joiners in team to create new EC2 instance which avoids missing/wrong configuration.
+  - With the AWS CLI, you manage multiple AWS services directly from the command line across Windows, macOS, and Linux.
+  - Good for: Advanced users and developers who need to automate tasks, script actions, and manage AWS resources efficiently from the command line.
 3. AWS SDK and AWS API
   - if C++ language program or Java application want to call AWS Services, then they can use AWS SDK for this.
   - AWS Software Development Kit is used by various programming languages to interact with AWS services.
