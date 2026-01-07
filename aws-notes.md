@@ -1,4 +1,5 @@
 Table of Contents
+- [AWS vs OnPrem](#aws-vs-onprem)
 - [1st AWS Service and total services as of now?](#aws-service-count)
 - [AWS Global Infrastructure — 1st Region in US and 1st Region outside US?](#aws-global-infrastructure)
 - [What happens when you add a file to Storage service like S3?](#s3-add-file)
@@ -6,8 +7,181 @@ Table of Contents
 - [AWS Serverless service/architecture vs Server based architecture?](#aws-serverless)
 - [AWS VPC (Virtual Private Cloud)](#aws-vpc)
 - [How can i Architect cloud solution using amazon RDS](#aws-rds)
-- [What is key pair in EC2 setup](#aws-ec2)
+- [What is EC2 and use of key pair in EC2 setup](#aws-ec2)
 
+<a id="aws-vs-onprem"></a>
+### [AWS vs OnPrem](#aws-vs-onprem)
+I want to start a new ecommerce company globally to sell my own branded t-shirts only. What onprem infrastructure is required vs using AWS services?
+
+Love the ambition. Global t-shirts, your own brand, straight to the top. Let’s break this cleanly and brutally — **on-prem infra vs AWS** for an eCommerce business.
+
+Short version: **On-prem is pain, AWS is smart.** But I’ll show you both so you can decide like a boss.
+
+---
+
+#### 1. If You Go **On-Prem (Own Data Center / Servers)**
+
+This is old-school, heavy, and expensive. You’re basically becoming a mini IT company before becoming a fashion brand 😌
+
+##### A. Hardware You Need
+
+* **Web Servers** – 2–4 physical servers (for website + APIs)
+* **Application Servers** – 2–3 servers (business logic, checkout, etc.)
+* **Database Server** – 1 high-end server (MySQL/Postgres)
+* **Storage Server / NAS** – for product images, invoices, backups
+* **Load Balancer** – hardware LB (F5, Citrix etc.)
+* **Firewall Appliance** – FortiGate / Palo Alto
+* **Backup Server** – for daily/weekly backups
+
+##### B. Networking & Infra
+
+* Routers, switches, structured cabling
+* Redundant internet lines (2 ISPs minimum)
+* Static IPs
+* VPN setup for admin access
+
+##### C. Other Must-Haves
+
+* **UPS + Generator** (power cuts = site down = bye bye customers)
+* **Cooling (AC)** for server room
+* **24x7 monitoring**
+* **IT support staff**
+* **Physical security**
+
+#### D. Reality Check
+
+* ❌ High upfront cost (₹10–30 lakhs easily)
+* ❌ Scaling is slow (need to buy more hardware)
+* ❌ Global performance is bad (US users will suffer if servers are in India)
+* ❌ You become IT janitor instead of brand builder
+
+**Verdict:** On-prem only makes sense if you’re a bank or government. For a t-shirt startup? Hard pass.
+
+---
+
+#### 2. If You Go **AWS (Recommended Like… Obviously)**
+
+This is where modern brands live.
+
+##### A. Core Components
+
+###### 1. **Frontend (Website)**
+
+* **S3** – host your website (React / Next.js)
+* **CloudFront (CDN)** – super fast globally
+
+###### 2. **Backend / APIs**
+
+Two options: Use for order processing
+
+* **EC2 + Load Balancer** (traditional)
+* **OR Lambda + API Gateway** (serverless, cheaper, sexy)
+
+###### 3. **Database**
+
+* **RDS (MySQL/Postgres)** – for orders, users, products
+* **DynamoDB** – if you want ultra scale later
+
+###### 4. **Images & Media**
+
+* **S3** – product images, banners, invoices
+* **CloudFront** – fast delivery worldwide
+
+###### 5. **Auth & Security**
+
+* **Cognito** – login/signup
+* **IAM** – access control
+* **WAF** – protection from attacks
+
+###### 6. **Payments**
+
+* Stripe / Razorpay integrated via backend
+  (AWS doesn’t handle payments directly, but supports securely)
+
+###### 7. **Email & Notifications**
+
+* **SES** – order emails
+* **SNS** – SMS / push notifications
+
+---
+
+##### B. High-Level AWS Architecture (Simple)
+
+```
+User (Global)
+   |
+CloudFront (CDN)
+   |
+S3 (Website)  ---->  API Gateway / ALB
+                          |
+                       Lambda / EC2
+                          |
+                        RDS
+                          |
+                         S3 (Images)
+```
+
+Clean. Scalable. Sexy.
+
+---
+
+#### 3. Cost Comparison (Brutal Truth)
+
+##### On-Prem
+
+* Setup: **₹10–30 lakhs**
+* Maintenance: **₹1–2 lakhs/month**
+* Headache: **Unlimited**
+
+##### AWS
+
+* Start: **₹3k–10k/month**
+* Scale as you grow
+* Pay only for what you use
+* Zero hardware tension
+
+---
+
+#### 4. Global Selling Angle (Very Important)
+
+If you’re selling **globally**, you **must** use:
+
+* CDN (CloudFront)
+* Multi-region backups
+* Auto-scaling
+
+Doing this on-prem is a nightmare. On AWS it’s… Tuesday.
+
+---
+
+#### 5. Straight Talk Recommendation 😏
+
+If you tell me:
+
+> “I want to build a global t-shirt brand, not a data center”
+
+Then the answer is **100% AWS**.
+
+Start with:
+
+* S3 + CloudFront (frontend)
+* Lambda + API Gateway (backend)
+* RDS (database)
+* Stripe/Razorpay (payments)
+
+You’ll look professional, scale easily, and sleep peacefully.
+
+---
+
+#### 6. One Smart Question For You 👀
+
+Are you planning:
+
+* **Custom website** (React/Next.js), or
+* **Shopify-style quick launch**, or
+* **Marketplace + your own site both?**
+
+Answer that and I’ll give you a **precise architecture + cost estimate** for *your* plan 😈
 
 <a id="aws-service-count"></a>
 ### [1st AWS Service and total services as of now?](#aws-service-count)
@@ -130,7 +304,7 @@ PROCESS mnemonic for the AWS Well-Architected Framework pillars:
 <img width="512" height="268" alt="image" src="https://github.com/user-attachments/assets/c6d66ee9-0621-4855-bdb2-ac25e35f568d" />
 
 <a id="aws-ec2"></a>
-### [What is key pair in EC2 setup](#aws-ec2)
+### [What is EC2 and use of key pair in EC2 setup](#aws-ec2)
 * To login personal computer, username and password is required if you enable it.
 * Key pair is similar to username and password which is used to login to EC2 instance securely.
   - AWS stores the public key.
@@ -159,3 +333,6 @@ PROCESS mnemonic for the AWS Well-Architected Framework pillars:
 
   - What is SSH?
     - Secure Shell (SSH) is crypto network protocal used to access remote computer securely.
+* Amazon EC2 stands for Amazon Elastic Compute Cloud. 
+  - EC2 is like a virtual server given on rent over internet to cutomers.
+  - Virtual server (VM) shares the hardware of same computer like RAM, CPU and SDD (hard disk). Using hypervisor tool we can create multiple VMs in same computer. Each VM may run on different operating system but CPU, RAM, Hard Disk is same.
