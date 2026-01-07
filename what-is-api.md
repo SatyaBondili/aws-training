@@ -15,4 +15,4 @@
 
 ### What is API Endpoint?
 * API endpoint is unique or specific URL, used by client to make request to server to get response back.
-* By using AWS API, you can start EC2 instances, stop EC2 instances and you can execute many more services provided by AWS without loging into AWS console from your computer.
+* In AWS, tasks such as launching an EC2 instance, stopping an instance, or modifying instance settings are done through API requests.
