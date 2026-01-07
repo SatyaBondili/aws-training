@@ -352,3 +352,7 @@ PROCESS mnemonic for the AWS Well-Architected Framework pillars:
   - CLI is used to perform repatative tasks. Developer creates a script which covers all steps to create a new EC2 instance in AWS, stores in code repository. That script is used by new joiners in team to create new EC2 instance which avoids missing/wrong configuration.
 3. AWS SDK and AWS API
   - if C++ language program or Java application want to call AWS Services, then they can use AWS SDK for this.
+  - AWS Software Development Kit is used by various programming languages to interact with AWS services.
+  - For example, you can list all ec2 instances using python script.
+  - <img width="509" height="260" alt="image" src="https://github.com/user-attachments/assets/a8ee0ad6-aae9-467b-b48b-3f341b5800ca" />
+
