@@ -8,6 +8,7 @@ Table of Contents
 - [AWS VPC (Virtual Private Cloud)](#aws-vpc)
 - [How can i Architect cloud solution using amazon RDS](#aws-rds)
 - [What is EC2 and use of key pair in EC2 setup](#aws-ec2)
+- [Ways to interact with AWS services](#aws-cli) 
 
 <a id="aws-vs-onprem"></a>
 ### [AWS vs OnPrem](#aws-vs-onprem)
@@ -341,3 +342,13 @@ PROCESS mnemonic for the AWS Well-Architected Framework pillars:
     - if it Linux O.S, users or admins can use SSH for remote login
     - if it is windows O.S, users or admins can use RDP (remote desktop protocol) for remote login from their machine directly.
     - if it is web or any other application, as per client- server model, they use internet to access EC2.
+
+<a id="aws-cli"></a>
+### [Ways to interact with AWS services](#aws-cli)
+1. AWS Console ( Manually log in to AWS UI to perform operations).
+2. AWS CLI ( Use can use cloud shell to perform operations on AWS services. Example you can create EC2 instance, stop EC2 insatnce, start EC2 instance, update settings of EC2 insatnce using commands via cloud shell - it is called CLI).
+  - AWS CLI stands for Amazon Web Services Command Line Interface.
+  - <img width="740" height="238" alt="image" src="https://github.com/user-attachments/assets/6f6c7104-5f04-4b39-88d1-21bdf7d47b14" />
+  - CLI is used to perform repatative tasks. Developer creates a script which covers all steps to create a new EC2 instance in AWS, stores in code repository. That script is used by new joiners in team to create new EC2 instance which avoids missing/wrong configuration.
+3. AWS SDK and AWS API
+  - if C++ language program or Java application want to call AWS Services, then they can use AWS SDK for this.
