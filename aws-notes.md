@@ -337,3 +337,7 @@ PROCESS mnemonic for the AWS Well-Architected Framework pillars:
   - EC2 is like a virtual server given on rent over internet to cutomers.
   - Virtual server (VM) shares the hardware of same computer like RAM, CPU and SDD (hard disk). Using hypervisor tool we can create multiple VMs in same computer. Each VM may run on different operating system but CPU, RAM, Hard Disk is same.
   - Hypervisor completely isolates each VM from others running in same machine.
+  - In multiple ways we connect to EC2 instance.
+    - if it Linux O.S, users or admins can use SSH for remote login
+    - if it is windows O.S, users or admins can use RDP (remote desktop protocol) for remote login from their machine directly.
+    - if it is web or any other application, as per client- server model, they use internet to access EC2.
