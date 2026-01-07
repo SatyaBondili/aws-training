@@ -21,3 +21,4 @@
 - Software as a service - Gmail, Workday, Salesforce ( Here customer need be ready with their data, thats all)
 ### What is the meaning of launching EC2 instance in AWS?
 - Instance refers to a virtual server in AWS cloud.
+- launching EC2 instance means starting VM server.
