@@ -22,3 +22,6 @@
 ### What is the meaning of launching EC2 instance in AWS?
 - Instance refers to a virtual server in AWS cloud.
 - launching EC2 instance means starting VM server.
+### What is scalability means?
+- Ability of a system to handle increased load by adding more resources.
+- ex: Adding more power to existing machine is called scalling.
