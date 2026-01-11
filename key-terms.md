@@ -24,4 +24,6 @@
 - launching EC2 instance means starting VM server.
 ### What is scalability means?
 - Ability of a system to handle increased load by adding more resources.
-- ex: Adding more power to existing machine is called scalling.
+- ex: Adding more power to existing machine is called scaling.
+- Scaling Up: Also called verticle scaling - increasing power of same machine.
+- Scaling out: Also called horizontal scalling - add more machines to serve increased load.
